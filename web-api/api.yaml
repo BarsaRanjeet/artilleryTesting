@@ -1,0 +1,13 @@
+config:
+  target: http://127.0.0.1:9001
+  phases:
+    - duration: 1
+      arrivalRate: 5 
+scenarios:
+  - flow:
+      - get:
+          url: "/"
+        response:
+          capture: "$"
+          as: "message"
+      - log: "{{ message }}"

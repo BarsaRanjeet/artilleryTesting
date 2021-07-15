@@ -1,0 +1,10 @@
+config:
+  target: "ws://localhost:9001"
+  phases:
+    - duration: 1
+      arrivalRate: 10000
+
+scenarios:
+  - engine: "ws"
+    flow:
+      - think: 600 # do nothing for 10m and disconnect

@@ -1,0 +1,16 @@
+config:
+  target: "http://18.130.29.19:4001"
+  socketio:
+    transports: ["websocket"]
+  phases:   
+    - duration: 1
+      arrivalRate: 1000
+  engines:
+    socketio-v3: {}
+scenarios:
+  - engine: "socketio-v3"
+    flow:
+      - emit: ["message", "hello"]
+      - emit: ["message","world"]
+      
+      - think: 100
